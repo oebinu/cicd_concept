@@ -27,7 +27,17 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
       
-    - name: Run ls -la
-      run: |
-        pwd
-        ls -la -R 
+
+
+    - name: Upload war file to artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: war-package
+        path: ./build/libs/*.war
+
+    - uses: actions/download-artifact@v2
+      with:
+        name: war-package
+
+
+
