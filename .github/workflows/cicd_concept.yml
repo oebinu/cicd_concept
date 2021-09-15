@@ -30,4 +30,4 @@ jobs:
     - name: Run ls -la
       run: |
         pwd
-        ls -la 
+        ls -la -R 
